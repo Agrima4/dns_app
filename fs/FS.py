@@ -38,6 +38,7 @@ def register():
     ttl      = body["ttl"]
     msg_bytes = pickle.dumps(((hostname, fs_ip, "A", ttl)))
     socket.socket(socket.AF_INET, socket.SOCK_DGRAM).sendto(msg_bytes, (as_ip, as_port))
+    
     return "Registration Successful!"
 
 if __name__ == '__main__':
